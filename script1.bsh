@@ -1,0 +1,11 @@
+#!bash script
+echo Hello, $USER!
+cd ~/../dumps
+
+mkdir "dump-$(date +"%d-%m-%Y")"
+cd ./"dump-$(date +"%d-%m-%Y")"
+
+mongodump --host localhost:27017
+
+mkdir Music
+cp -r ~/Music/.  ./Music/.
